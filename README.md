@@ -25,6 +25,7 @@ About this app
 ---
 Anyway, this app is for those, who don't want to mess with adb shell and input commands manually and prefer to just click on app name to enable/disable it from running in the background.
 Sadly, android apps are not allowed to implicitely edit permissions of other apps, so this application requires root to overcome it.
+[![Download](https://api.bintray.com/packages/mrbimc/maven/VintageChroma/images/download.svg)](https://github.com/MrBIMC/RunInBackgroundPermissionSetter/releases/download/1.0/app-release.apk)
 
 
 Licence is GPLv3
