@@ -20,6 +20,7 @@ To check status of RUN_IN_BACKGROUND permission on any app, one can execute this
 ```<package_name>``` is obviously name of application package, be it com.android.calculator2 or anything else.
 
 By disabling RUN_IN_BACKGROUND, apps such as Hangouts or Facebook will completely stop syncing in the background until you open them up.
+You can find more information about these commands by reading [this xda article](https://www.xda-developers.com/freeze-app-background-processes-without-root-android-nougat)
 
 About this app
 ---
