@@ -1,0 +1,33 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.pavelsikun.runinbackgroundpermissionsetter"
+        minSdkVersion 24
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation 'com.android.support:appcompat-v7:26.0.0-beta2'
+    implementation 'eu.chainfire:libsuperuser:1.0.0.+'
+    implementation 'com.android.support:recyclerview-v7:26.0.0-beta2'
+    implementation 'net.sourceforge.streamsupport:streamsupport-cfuture:1.5.5'
+    implementation 'org.jetbrains.anko:anko-coroutines:0.10.1'
+}

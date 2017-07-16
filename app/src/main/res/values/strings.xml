@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">BackgroundPermissionSetter</string>
+    <string name="github">Git Repo</string>
+</resources>
