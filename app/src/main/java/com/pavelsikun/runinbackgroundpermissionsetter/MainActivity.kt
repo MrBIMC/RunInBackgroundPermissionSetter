@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.action_github) {
-            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/mrbimc/RunInBackgroundPermissionSetter")))
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/MrBIMC/RunInBackgroundPermissionSetter")))
         }
         return super.onOptionsItemSelected(item)
     }
