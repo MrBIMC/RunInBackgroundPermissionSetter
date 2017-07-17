@@ -1,6 +1,5 @@
 package com.pavelsikun.runinbackgroundpermissionsetter
 
-import android.app.ProgressDialog
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
@@ -15,12 +14,14 @@ import kotlinx.coroutines.experimental.Deferred
 import kotlinx.coroutines.experimental.android.UI
 import kotlinx.coroutines.experimental.async
 import org.jetbrains.anko.coroutines.experimental.bg
+import com.yarolegovich.lovelydialog.LovelyStandardDialog
+import com.yarolegovich.lovelydialog.LovelyProgressDialog
 
 class MainActivity : AppCompatActivity() {
 
     val adapter by lazy {
         AppListAdapter {
-            setRunInBackgroundPermission(it.appPackage, !it.isEnabled)
+            setRunInBackgroundPermission(it.appPackage, it.isEnabled)
         }
     }
 
@@ -45,18 +46,21 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.action_github) {
-            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/MrBIMC/RunInBackgroundPermissionSetter")))
+        when (item.itemId) {
+            R.id.action_github -> openGithub()
+            R.id.action_info -> showInfoDialog()
         }
         return super.onOptionsItemSelected(item)
     }
 
     fun loadApps() {
         swipeRefreshLayout.isRefreshing = false
-        val ad = ProgressDialog(this)
-        ad.setTitle("Loading apps and their RUN_IN_BACKGROUND status...")
-        ad.setCancelable(false)
-        ad.show()
+        val ad = LovelyProgressDialog(this)
+                .setTopColorRes(R.color.accent)
+                .setTopTitle(getString(R.string.loading_dialog_title))
+                .setTopTitleColor(getColor(android.R.color.white))
+                .setIcon(R.drawable.clock_alert)
+                .setMessage(getString(R.string.loading_dialog_message)).show()
 
         async(UI) {
             val intent = Intent(Intent.ACTION_MAIN, null)
@@ -74,10 +78,29 @@ class MainActivity : AppCompatActivity() {
                 adapter.addItem(data.await())
 
                 if (adapter.itemCount == apps.size) {
-                    ad.cancel()
+                    ad.dismiss()
                 }
             }
         }
+    }
+
+    fun openGithub() {
+        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/MrBIMC/RunInBackgroundPermissionSetter")))
+    }
+
+    fun showInfoDialog() {
+        LovelyStandardDialog(this)
+                .setTopColorRes(R.color.accent)
+                .setTopTitle(getString(R.string.button_open_information))
+                .setTopTitleColor(getColor(android.R.color.white))
+                .setButtonsColorRes(R.color.primary)
+                .setIcon(R.drawable.information)
+                .setMessage(R.string.info_dialog_message)
+                .setNegativeButton(getString(R.string.button_close_dialog), null)
+                .setPositiveButton(getString(R.string.button_open_github)) {
+                    openGithub()
+                }
+                .show()
     }
 
 }

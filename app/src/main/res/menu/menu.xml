@@ -3,8 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MainActivity">
+    <item android:id="@+id/action_info"
+        android:title="@string/button_open_information"
+        android:icon="@drawable/information"
+        app:showAsAction="always" />
     <item android:id="@+id/action_github"
-        android:title="@string/github"
+        android:title="@string/button_open_github"
         android:icon="@drawable/github_circle"
         app:showAsAction="always" />
 </menu>

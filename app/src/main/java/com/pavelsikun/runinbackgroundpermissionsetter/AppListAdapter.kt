@@ -14,16 +14,27 @@ class AppListAdapter(val appItems: MutableList<AppItem> = ArrayList<AppItem>(), 
     inner class ViewHolder(view: View, val itemClick: (AppItem) -> Unit) : RecyclerView.ViewHolder(view) {
 
         fun bindAppItem(appItem: AppItem) = with(itemView) {
+            fun setStatus(isEnabled: Boolean) {
+                appItem.isEnabled = isEnabled
+                permissionStatus.text = if (appItem.isEnabled) {
+                    context.getString(R.string.message_allow)
+                } else {
+                    context.getString(R.string.message_ignore)
+                }
+            }
+
             permissionSwitch.setOnCheckedChangeListener(null)
 
             appIcon.setImageDrawable(appItem.appIcon)
             appName.text = appItem.appName
             appPackage.text = appItem.appPackage
+
             permissionSwitch.isChecked = appItem.isEnabled
+            setStatus(appItem.isEnabled)
 
             permissionSwitch.setOnCheckedChangeListener { _, _ ->
+                setStatus(!appItem.isEnabled)
                 itemClick(appItem)
-                appItem.isEnabled = !appItem.isEnabled
             }
 
             container.setOnClickListener {

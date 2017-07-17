@@ -1,8 +1,8 @@
 package com.pavelsikun.runinbackgroundpermissionsetter
 
 import android.app.Activity
-import android.util.Log
-import android.widget.Toast
+import android.support.design.widget.Snackbar
+import android.view.View
 import eu.chainfire.libsuperuser.Shell
 import java.util.concurrent.CompletableFuture
 
@@ -10,7 +10,7 @@ import java.util.concurrent.CompletableFuture
  * Created by Pavel Sikun on 16.07.17.
  */
 
-val shell by lazy { Shell.Builder()
+private val shell by lazy { Shell.Builder()
         .setShell("su")
         .open()
 }
@@ -22,9 +22,6 @@ fun checkRunInBackgroundPermission(pkg: String): CompletableFuture<Boolean> {
         val outputString = output.joinToString()
         val runInBackgroundDisabled = outputString.contains("ignore")
         future.complete(!runInBackgroundDisabled)
-
-        Log.d("app", outputString)
-        Log.d("app", "output contains 'ignore' ? " + runInBackgroundDisabled)
     }
 
     return future
@@ -33,6 +30,7 @@ fun checkRunInBackgroundPermission(pkg: String): CompletableFuture<Boolean> {
 fun Activity.setRunInBackgroundPermission(pkg: String, setEnabled: Boolean): CompletableFuture<Boolean> {
     val future = CompletableFuture<Boolean>()
     val cmdFlag = if (setEnabled) "allow" else "ignore"
+    val msgFlag = if (setEnabled) getString(R.string.message_allow) else getString(R.string.message_ignore)
 
     shell.addCommand("cmd appops set $pkg RUN_IN_BACKGROUND $cmdFlag", 1) { _, _, output: MutableList<String> ->
         val outputString = output.joinToString()
@@ -40,12 +38,16 @@ fun Activity.setRunInBackgroundPermission(pkg: String, setEnabled: Boolean): Com
 
         if (!isError) {
             runOnUiThread {
-                Toast.makeText(this, "$pkg RUN_IN_BACKGROUND set to $cmdFlag", Toast.LENGTH_LONG).show()
+                val rootView: View = findViewById(android.R.id.content)
+                val msg = "$pkg RUN_IN_BACKGROUND ${getString(R.string.message_was_set_to)} '$cmdFlag'"
+                Snackbar.make(rootView, msg, Snackbar.LENGTH_SHORT).show()
             }
         }
         else {
             runOnUiThread {
-                Toast.makeText(this, "There was error setting $pkg RUN_IN_BACKGROUND set to $cmdFlag", Toast.LENGTH_LONG).show()
+                val rootView: View = findViewById(android.R.id.content)
+                val msg = "${getString(R.string.message_there_was_error)} $pkg RUN_IN_BACKGROUND ${getString(R.string.message_to)} '$msgFlag'"
+                Snackbar.make(rootView, msg, Snackbar.LENGTH_SHORT).show()
             }
         }
 
