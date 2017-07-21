@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">BackgroundPermissionSetter</string>
+
+    <string name="info_dialog_message">Seit Android 7.0 gibt es die Berechtigung RUN_IN_BACKGROUND, welche das Ausführen von App\'s im Hintergrund steuern kann. Diese Berechtigung ist leider versteckt und konnte bisher nur über komplizierte ADB-Befehle aktiviert werden.\n
+   \n
+   Diese App erleichtert dieses komplizierte Verfahren nun durch eine benutzerfreundliche und intuitive Oberfläche. Root-Rechte werden für diese App benötigt, damit diese die Berechtigungen von anderen App\'s ändern darf.\n
+   \n
+   Mehr Informationen über diese App gibt es auf Github.</string>
+    <string name="loading_dialog_message">Überprüfe Root-Rechte, lade App\'s und Berechtigungen...</string>
+    <string name="loading_dialog_title">Ladevorgang...</string>
+
+    <string name="button_close_dialog">Schließen</string>
+    <string name="button_open_github">Github</string>
+    <string name="button_open_information">Information</string>
+
+    <string name="message_there_was_error">Ein Fehler ist aufgetreten</string>
+    <string name="message_to">zu</string>
+    <string name="message_was_set_to">geändert zu</string>
+
+    <string name="message_allow">Ja</string>
+    <string name="message_ignore">Nein</string>
+</resources>
