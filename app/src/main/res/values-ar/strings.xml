@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">BackgroundPermissionSetter</string>
+
+    <string name="info_dialog_message">اندرويد 7.0 اضاف اذنا جديدا يسمى [التشغيل في الخلفية]، الذي يمكنه حظر التطبيقات من العمل في الخلفية.\n
+ ولكن هذا الاذن مخفي بشكل كامل ولايمكن بأي طريقة تفعيله الا عن طريق اوامر adb.\n
+ صمم هذا التطبيق للذين لايريدون العبث بأوامر adb والذين لايريدون ادخالها بشكل يدوي والذين يفضلون السماح او الحظر من التشغيل في الخلفية للتطبيق عن طريق ضغطة زر واحدة.\n
+ بما ان نظام اندرويد لايسمح للتطبيقات بالعبث باذونات تطيبيقات اخرى، فان هذا التطبيق يحتاج صلاحيات الروت لتجاوز هذا الشيء.\n
+ للمزيد من المعلومات (باللغة الانكليزية فقط) قم بزيارة github repo للتطبيق.</string>
+    <string name="loading_dialog_message">التحقق من صلاحيات الروت، تجميع قائمة من التطبيقات والتحقق من حالة اذن تشغيلها في الخلفية ....</string>
+    <string name="loading_dialog_title">الرجاء الانتظار ....</string>
+
+    <string name="button_close_dialog">اغلاق</string>
+    <string name="button_open_github">افتح github</string>
+    <string name="button_open_information">معلومات</string>
+
+    <string name="message_there_was_error">خطأ في ضبط الاذن</string>
+    <string name="message_to">الى</string>
+    <string name="message_was_set_to">ضبط الى</string>
+
+    <string name="message_allow">سماح</string>
+    <string name="message_ignore">رفض</string>
+</resources>
