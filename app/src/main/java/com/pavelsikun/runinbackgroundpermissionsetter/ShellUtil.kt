@@ -39,7 +39,7 @@ fun Activity.setRunInBackgroundPermission(pkg: String, setEnabled: Boolean): Com
         if (!isError) {
             runOnUiThread {
                 val rootView: View = findViewById(android.R.id.content)
-                val msg = "$pkg RUN_IN_BACKGROUND ${getString(R.string.message_was_set_to)} '$cmdFlag'"
+                val msg = "$pkg RUN_IN_BACKGROUND ${getString(R.string.message_was_set_to)} '$msgFlag'"
                 Snackbar.make(rootView, msg, Snackbar.LENGTH_SHORT).show()
             }
         }
