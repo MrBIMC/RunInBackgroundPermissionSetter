@@ -7,8 +7,24 @@
         android:title="@string/button_open_information"
         android:icon="@drawable/information"
         app:showAsAction="always" />
-    <item android:id="@+id/action_github"
-        android:title="@string/button_open_github"
-        android:icon="@drawable/github_circle"
+
+    <item android:id="@+id/action_sort"
+        android:title="@string/action_sort"
+        android:icon="@drawable/sort"
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/action_sort_name"
+                android:title="@string/action_sort_name" />
+            <item
+                android:id="@+id/action_sort_package"
+                android:title="@string/action_sort_package" />
+        </menu>
+    </item>
+
+    <item android:id="@+id/action_search"
+        android:title="@string/action_search"
+        android:icon="@drawable/magnify"
         app:showAsAction="always" />
+
 </menu>

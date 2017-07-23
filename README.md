@@ -28,7 +28,16 @@ Anyway, this app is for those, who don't want to mess with adb shell and input c
 Sadly, android apps are not allowed to implicitely edit permissions of other apps, so this application requires root to overcome it.
 
 
-[Download](https://github.com/MrBIMC/RunInBackgroundPermissionSetter/releases/download/1.0/app-release.apk)
+Contributors
+---
+[Pavel Sikun (MrBIMC)](https://github.com/MrBIMC) - creator of the app
+
+[Gianmarco Scarano (SlimShadys)](https://github.com/SlimShadys) - provided translations for Italian language
+
+[basemym](https://github.com/basemym) - provided translations for Arabic language
+
+[ToxxMe](https://github.com/ToxxMe) - provided translations for German language
+
 
 
 Licence is GPLv3
