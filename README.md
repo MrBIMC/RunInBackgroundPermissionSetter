@@ -31,9 +31,13 @@ Sadly, android apps are not allowed to implicitely edit permissions of other app
 Contributors
 ---
 [Pavel Sikun (MrBIMC)](https://github.com/MrBIMC) - creator of the app
-[Gianmarco Scarano (SlimShadys)](https://github.com/SlimShadys) - provided translations for Italian language.
+
+[Gianmarco Scarano (SlimShadys)](https://github.com/SlimShadys) - provided translations for Italian language
+
 [basemym](https://github.com/basemym) - provided translations for Arabic language
+
 [ToxxMe](https://github.com/ToxxMe) - provided translations for German language
+
 
 
 Licence is GPLv3
