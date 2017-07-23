@@ -25,6 +25,7 @@ import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.app.Activity
 import android.view.inputmethod.InputMethodManager
+import com.pavelsikun.runinbackgroundpermissionsetter.AppListAdapter.SortMethod
 
 
 class MainActivity : AppCompatActivity() {
@@ -60,8 +61,9 @@ class MainActivity : AppCompatActivity() {
         when (item.itemId) {
             R.id.action_search -> showSearchBar()
             R.id.action_info -> showInfoDialog()
-            R.id.action_sort_name -> adapter.sortByName()
-            R.id.action_sort_package -> adapter.sortByPackage()
+            R.id.action_sort_name -> adapter.sort(SortMethod.NAME)
+            R.id.action_sort_package -> adapter.sort(SortMethod.PACKAGE)
+            R.id.action_sort_disabled_first -> adapter.sort(SortMethod.STATE)
         }
         return super.onOptionsItemSelected(item)
     }
@@ -91,7 +93,7 @@ class MainActivity : AppCompatActivity() {
                 adapter.addItem(data.await())
 
                 if (adapter.itemCount == apps.size) {
-                    adapter.sortByName()
+                    adapter.sort()
                     ad.dismiss()
                 }
             }

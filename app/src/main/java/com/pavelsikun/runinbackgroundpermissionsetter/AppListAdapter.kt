@@ -12,8 +12,11 @@ import kotlinx.android.synthetic.main.listitem_app.view.*
  */
 class AppListAdapter(val itemClick: (AppItem) -> Unit) : RecyclerView.Adapter<AppListAdapter.ViewHolder>(), FastScrollRecyclerView.SectionedAdapter {
 
+    enum class SortMethod { NAME, PACKAGE, STATE }
+
     val allItems = ArrayList<AppItem>()
     val displayedItems = ArrayList<AppItem>()
+    var sortMethod = SortMethod.NAME
 
     inner class ViewHolder(view: View, val itemClick: (AppItem) -> Unit) : RecyclerView.ViewHolder(view) {
 
@@ -63,26 +66,31 @@ class AppListAdapter(val itemClick: (AppItem) -> Unit) : RecyclerView.Adapter<Ap
 
     fun addItem(appItem: AppItem) {
         allItems.add(appItem)
-        setItemsToDisplay(allItems)
-        notifyDataSetChanged()
+        sort()
     }
 
     fun clear() {
         allItems.clear()
         setItemsToDisplay(allItems)
-        notifyDataSetChanged()
     }
 
-    fun sortByName() {
-        allItems.sortBy { it.appName }
-        setItemsToDisplay(allItems)
-        notifyDataSetChanged()
-    }
+    fun sort(method: SortMethod = sortMethod) {
+        sortMethod = method
 
-    fun sortByPackage() {
-        allItems.sortBy { it.appPackage }
-        setItemsToDisplay(allItems)
-        notifyDataSetChanged()
+        when (method) {
+            SortMethod.NAME -> {
+                allItems.sortBy { it.appName }
+                setItemsToDisplay(allItems)
+            }
+            SortMethod.PACKAGE -> {
+                allItems.sortBy { it.appPackage }
+                setItemsToDisplay(allItems)
+            }
+            SortMethod.STATE -> {
+                allItems.sortBy { it.isEnabled }
+                setItemsToDisplay(allItems)
+            }
+        }
     }
 
     fun filter(keyword: String) {

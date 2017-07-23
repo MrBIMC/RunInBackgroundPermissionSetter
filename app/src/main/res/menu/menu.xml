@@ -19,6 +19,9 @@
             <item
                 android:id="@+id/action_sort_package"
                 android:title="@string/action_sort_package" />
+            <item
+                android:id="@+id/action_sort_disabled_first"
+                android:title="@string/action_sort_disabled_first" />
         </menu>
     </item>
 
