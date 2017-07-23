@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">BackgroundPermissionSetter</string>
 
     <string name="info_dialog_message">Android 7.0 added new permission called RUN_IN_BACKGROUND, which can block background behavior of apps. However this permission is fully hidden and there\'s no way to activate it besides using adb commands. \n\nThis app is for those, who don\'t want to mess with adb shell and input commands manually and prefer to just click on app name to enable/disable it from running in the background. As android apps are not allowed to mess with other apps\' permissions, this app requires root to overcome this issue. \n\nFor more detailed information check app\'s github repo.</string>
     <string name="loading_dialog_message">Checking root status, loading list of apps and retrieving their RUN_IN_BACKGROUND state…</string>
@@ -15,4 +14,15 @@
 
     <string name="message_allow">allow</string>
     <string name="message_ignore">ignore</string>
+
+    <!--new and changed strings from 1.2-->
+    <string name="app_name">BackgroundRestrictor</string>
+
+    <string name="action_search">Search</string>
+
+    <string name="action_sort">Sort</string>
+    <string name="action_sort_name">sort by name</string>
+    <string name="action_sort_package">sort by package</string>
+    <string name="search_hint">Enter app name or package...</string>
+
 </resources>
