@@ -23,6 +23,6 @@
     <string name="action_sort">Sort</string>
     <string name="action_sort_name">sort by name</string>
     <string name="action_sort_package">sort by package</string>
-    <string name="search_hint">Enter app name or package...</string>
+    <string name="search_hint">Enter app name or package…</string>
 
 </resources>
