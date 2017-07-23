@@ -19,9 +19,9 @@
     <string name="app_name">BackgroundRestrictor</string>
 
     <string name="action_search">Поиск</string>
+    <string name="search_hint">Введите название или пакет…</string>
 
     <string name="action_sort">Сортировка</string>
     <string name="action_sort_name">сортировать по имени</string>
     <string name="action_sort_package">сортировать по пакету</string>
-    <string name="search_hint">Введите название или пакет…</string>
 </resources>

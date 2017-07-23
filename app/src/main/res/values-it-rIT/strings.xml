@@ -1,6 +1,4 @@
 <resources>
-    <string name="app_name">BackgroundPermissionSetter</string>
-
     <string name="info_dialog_message">A partire da Android 7.0, un nuovo permesso chiamato RUN_IN_BACKGROUND è stato aggiunto e la sua funzionalità è quella di bloccare i dati in background delle app. Tuttavia, questo permesso è completamente nascosto e l\'unico modo per attivarlo è tramite i comandi ADB. Quest\'app è per coloro che non hanno esperienza con la shell di ADB e preferiscono cliccare sul nome dell\'app per attivare/disattivare i relativi dati in background. Di norma, le app non possono andare in conflitto con i permessi di altre app, perciò è necessario il root per ovviare a questo problema. Per ulteriori informazioni, visita il codice sorgente dell\'app su GitHub.</string>
     <string name="loading_dialog_message">Controllo stato del root, caricamento della lista di tutte le app e recupero del permesso RUN_IN_BACKGROUND…</string>
     <string name="loading_dialog_title">Caricamento…</string>
@@ -15,4 +13,14 @@
 
     <string name="message_allow">Permetti</string>
     <string name="message_ignore">Ignora</string>
+
+    <!--new and changed strings from 1.2-->
+    <string name="app_name">BackgroundRestrictor</string>
+
+    <string name="action_search">Search</string>
+    <string name="search_hint">Enter app name or package…</string>
+
+    <string name="action_sort">Sort</string>
+    <string name="action_sort_name">sort by name</string>
+    <string name="action_sort_package">sort by package</string>
 </resources>
