@@ -1,9 +1,9 @@
 <resources>
     <string name="info_dialog_message">اندرويد 7.0 اضاف اذنا جديدا يسمى [التشغيل في الخلفية]، الذي يمكنه حظر التطبيقات من العمل في الخلفية.\n
- ولكن هذا الاذن مخفي بشكل كامل ولايمكن بأي طريقة تفعيله الا عن طريق اوامر adb.\n
- صمم هذا التطبيق للذين لايريدون العبث بأوامر adb والذين لايريدون ادخالها بشكل يدوي والذين يفضلون السماح او الحظر من التشغيل في الخلفية للتطبيق عن طريق ضغطة زر واحدة.\n
- بما ان نظام اندرويد لايسمح للتطبيقات بالعبث باذونات تطيبيقات اخرى، فان هذا التطبيق يحتاج صلاحيات الروت لتجاوز هذا الشيء.\n
- للمزيد من المعلومات (باللغة الانكليزية فقط) قم بزيارة github repo للتطبيق.</string>
+   ولكن هذا الاذن مخفي بشكل كامل ولايمكن بأي طريقة تفعيله الا عن طريق اوامر adb.\n
+   صمم هذا التطبيق للذين لايريدون العبث بأوامر adb والذين لايريدون ادخالها بشكل يدوي والذين يفضلون السماح او الحظر من التشغيل في الخلفية للتطبيق عن طريق ضغطة زر واحدة.\n
+   بما ان نظام اندرويد لايسمح للتطبيقات بالعبث باذونات تطيبيقات اخرى، فان هذا التطبيق يحتاج صلاحيات الروت لتجاوز هذا الشيء.\n
+   للمزيد من المعلومات (باللغة الانكليزية فقط) قم بزيارة github repo للتطبيق.</string>
     <string name="loading_dialog_message">التحقق من صلاحيات الروت، تجميع قائمة من التطبيقات والتحقق من حالة اذن تشغيلها في الخلفية ....</string>
     <string name="loading_dialog_title">الرجاء الانتظار ....</string>
 
@@ -19,12 +19,12 @@
     <string name="message_ignore">رفض</string>
 
     <!--new and changed strings from 1.2-->
-    <string name="app_name">BackgroundRestrictor</string>
+    <string name="app_name">ضابط الهلفية</string>
 
-    <string name="action_search">Search</string>
+    <string name="action_search">بحث</string>
 
-    <string name="action_sort">Sort</string>
-    <string name="action_sort_name">sort by name</string>
-    <string name="action_sort_package">sort by package</string>
-    <string name="search_hint">Enter app name or package…</string>
+    <string name="action_sort">فرز</string>
+    <string name="action_sort_name">فرز حسب الاسم</string>
+    <string name="action_sort_package">فرز حسب الباكج</string>
+    <string name="search_hint">ادخل اسم التطبيق او اسم الباكج</string>
 </resources>
