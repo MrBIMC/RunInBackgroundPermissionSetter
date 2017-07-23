@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="info_dialog_message">В Android 7.0 было добавлено новое разрешение, которое называется RUN_IN_BACKGROUND. Это разрешение позволяет блокировать фоновое поведение приложений. К сожалению, это разрешение скрыто от пользователей и его невозможно активировать без выполнения комманд через консоль отладки(ADB).\n\nЭто приложение для тех, кто не хочет прикасаться к ADB и вводить комманды. Эта программа позволяет переключать состояние RUN_IN_BACKGROUND разных приложений простым нажатем кнопки. Так как Android приложения не имеют права редактировать разрешения других приложений, данная программа требует root для обхода этой проблемы. \n\nДля получения более детально информации, посетите github репозиторий данного проекта.</string>
+    <string name="info_dialog_message">В Android 7.0 было добавлено новое разрешение, которое называется RUN_IN_BACKGROUND. Это разрешение позволяет блокировать фоновое поведение приложений. К сожалению, это разрешение скрыто от пользователей и его невозможно активировать без выполнения комманд через консоль отладки(ADB).\n\nЭто приложение для тех, кто не хочет прикасаться к ADB и вводить комманды. Эта программа позволяет переключать состояние RUN_IN_BACKGROUND разных приложений простым нажатем кнопки. Так как Android приложения не имеют права редактировать разрешения других приложений, данная программа требует root для обхода этой проблемы. \n\nДля получения более детальной информации, посетите github репозиторий данного проекта.</string>
     <string name="loading_dialog_message">Проверяю статус root, загружаю список приложений и получаю их состояние RUN_IN_BACKGROUND…</string>
     <string name="loading_dialog_title">Загрузка…</string>
 
@@ -9,11 +9,11 @@
     <string name="button_open_information">информация</string>
 
     <string name="message_there_was_error">Произошла ошибка установки</string>
-    <string name="message_to">к</string>
-    <string name="message_was_set_to">установить</string>
+    <string name="message_to">к значению</string>
+    <string name="message_was_set_to">установлено к значению</string>
 
     <string name="message_allow">разрешить</string>
-    <string name="message_ignore">игнорировать</string>
+    <string name="message_ignore">запретить</string>
 
     <!--new and changed strings from 1.2-->
     <string name="app_name">BackgroundRestrictor</string>
