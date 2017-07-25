@@ -13,7 +13,6 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.coroutines.experimental.Deferred
 import kotlinx.coroutines.experimental.android.UI
 import kotlinx.coroutines.experimental.async
 import org.jetbrains.anko.coroutines.experimental.bg
@@ -28,15 +27,14 @@ import android.support.design.widget.Snackbar
 import android.view.inputmethod.InputMethodManager
 import com.pavelsikun.runinbackgroundpermissionsetter.AppListAdapter.SortMethod
 
-
 class MainActivity : AppCompatActivity() {
 
     val adapter by lazy {
-        AppListAdapter { app ->
-            setRunInBackgroundPermission(app.appPackage, app.isEnabled) { isSuccess ->
-                val status = if (app.isEnabled) getString(R.string.message_allow) else getString(R.string.message_ignore)
-                val msgSuccess = "${app.appPackage} RUN_IN_BACKGROUND ${getString(R.string.message_was_set_to)} '$status'"
-                val msgError = "${getString(R.string.message_there_was_error)} $${app.appPackage} RUN_IN_BACKGROUND ${getString(R.string.message_to)} '$status'"
+        AppListAdapter { (_, appName, appPackage, isEnabled) ->
+            setRunInBackgroundPermission(appPackage, isEnabled) { isSuccess ->
+                val status = if (isEnabled) getString(R.string.message_allow) else getString(R.string.message_ignore)
+                val msgSuccess = "$appName RUN_IN_BACKGROUND ${getString(R.string.message_was_set_to)} '$status'"
+                val msgError = "${getString(R.string.message_there_was_error)} $appName RUN_IN_BACKGROUND ${getString(R.string.message_to)} '$status'"
 
                 runOnUiThread {
                     val msg = if (isSuccess) msgSuccess else msgError
@@ -93,7 +91,7 @@ class MainActivity : AppCompatActivity() {
             val apps = packageManager.queryIntentActivities(intent, PackageManager.GET_META_DATA)
 
             apps.map {
-                val data: Deferred<AppItem> = bg {
+                val data = bg {
                     AppItem(it.loadIcon(packageManager),
                             it.loadLabel(packageManager).toString(),
                             it.activityInfo.packageName,

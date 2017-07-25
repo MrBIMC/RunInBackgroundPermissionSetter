@@ -19,8 +19,8 @@ fun checkRunInBackgroundPermission(pkg: String): CompletableFuture<Boolean> {
 
     shell.addCommand("cmd appops get $pkg RUN_IN_BACKGROUND", 1) { _, _, output: MutableList<String> ->
         val outputString = output.joinToString()
-        val runInBackgroundDisabled = outputString.contains("ignore")
-        future.complete(!runInBackgroundDisabled)
+        val runInBackgroundEnabled = outputString.contains("allow")
+        future.complete(runInBackgroundEnabled)
     }
 
     return future
@@ -28,13 +28,13 @@ fun checkRunInBackgroundPermission(pkg: String): CompletableFuture<Boolean> {
 
 fun setRunInBackgroundPermission(pkg: String, setEnabled: Boolean, callback: Callback): CompletableFuture<Boolean> {
     val future = CompletableFuture<Boolean>()
-    val cmdFlag = if (setEnabled) "allow" else "ignore"
+    val cmd = if (setEnabled) "allow" else "ignore"
 
-    shell.addCommand("cmd appops set $pkg RUN_IN_BACKGROUND $cmdFlag", 1) { _, _, output: MutableList<String> ->
+    shell.addCommand("cmd appops set $pkg RUN_IN_BACKGROUND $cmd", 1) { _, _, output: MutableList<String> ->
         val outputString = output.joinToString()
-        val isError = outputString.trim().isNotEmpty()
-        callback(isError)
-        future.complete(!outputString.trim().isEmpty())
+        val isSuccess = outputString.trim().isEmpty()
+        callback(isSuccess)
+        future.complete(isSuccess)
     }
 
     return future

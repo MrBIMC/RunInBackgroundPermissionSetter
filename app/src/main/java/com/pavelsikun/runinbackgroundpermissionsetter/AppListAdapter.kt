@@ -59,8 +59,6 @@ class AppListAdapter(val itemClick: (AppItem) -> Unit) : RecyclerView.Adapter<Ap
         holder.bindAppItem(displayedItems[position])
     }
 
-//    override fun getSectionName(position: Int) = displayedItems[position].appName[0].toString()
-
     override fun getItemCount() = displayedItems.size
 
     fun addItem(appItem: AppItem) {
