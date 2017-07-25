@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout android:orientation="vertical"
+    android:id="@+id/coordinator"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -31,15 +32,18 @@
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/swipeRefreshLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <com.simplecityapps.recyclerview_fastscroll.views.FastScrollRecyclerView
+        <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:fastScrollPopupBgColor="@color/primary"
-            app:fastScrollPopupTextColor="@android:color/primary_text_dark"
-            app:fastScrollThumbColor="@color/primary"/>
+            app:fastScrollEnabled="true"
+            app:fastScrollVerticalTrackDrawable="@drawable/fastscroll_track_selector"
+            app:fastScrollHorizontalTrackDrawable="@drawable/fastscroll_track_selector"
+            app:fastScrollVerticalThumbDrawable="@drawable/fastscroll_thumb_selector"
+            app:fastScrollHorizontalThumbDrawable="@drawable/fastscroll_thumb_selector"/>
 
     </android.support.v4.widget.SwipeRefreshLayout>
 

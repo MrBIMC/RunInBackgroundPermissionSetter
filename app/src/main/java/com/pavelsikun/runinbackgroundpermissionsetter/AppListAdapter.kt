@@ -4,13 +4,12 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.simplecityapps.recyclerview_fastscroll.views.FastScrollRecyclerView
 import kotlinx.android.synthetic.main.listitem_app.view.*
 
 /**
  * Created by Pavel Sikun on 16.07.17.
  */
-class AppListAdapter(val itemClick: (AppItem) -> Unit) : RecyclerView.Adapter<AppListAdapter.ViewHolder>(), FastScrollRecyclerView.SectionedAdapter {
+class AppListAdapter(val itemClick: (AppItem) -> Unit) : RecyclerView.Adapter<AppListAdapter.ViewHolder>() {
 
     enum class SortMethod { NAME, PACKAGE, STATE }
 
@@ -60,7 +59,7 @@ class AppListAdapter(val itemClick: (AppItem) -> Unit) : RecyclerView.Adapter<Ap
         holder.bindAppItem(displayedItems[position])
     }
 
-    override fun getSectionName(position: Int) = displayedItems[position].appName[0].toString()
+//    override fun getSectionName(position: Int) = displayedItems[position].appName[0].toString()
 
     override fun getItemCount() = displayedItems.size
 

@@ -13,7 +13,7 @@
     <string name="message_was_set_to">set to</string>
 
     <string name="message_allow">allow</string>
-    <string name="message_ignore">ignore</string>
+    <string name="message_ignore">restrict</string>
 
     <string name="app_name">BackgroundRestrictor</string>
 
@@ -22,7 +22,7 @@
     <string name="action_sort">Sort</string>
     <string name="action_sort_name">by name</string>
     <string name="action_sort_package">by package</string>
-    <string name="action_sort_disabled_first">by disabled first</string>
+    <string name="action_sort_disabled_first">by restricted first</string>
     <string name="search_hint">Enter app name or package…</string>
 
 </resources>

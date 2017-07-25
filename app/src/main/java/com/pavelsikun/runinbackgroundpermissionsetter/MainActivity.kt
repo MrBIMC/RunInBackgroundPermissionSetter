@@ -24,6 +24,7 @@ import android.view.ViewAnimationUtils
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.app.Activity
+import android.support.design.widget.Snackbar
 import android.view.inputmethod.InputMethodManager
 import com.pavelsikun.runinbackgroundpermissionsetter.AppListAdapter.SortMethod
 
@@ -31,8 +32,17 @@ import com.pavelsikun.runinbackgroundpermissionsetter.AppListAdapter.SortMethod
 class MainActivity : AppCompatActivity() {
 
     val adapter by lazy {
-        AppListAdapter {
-            setRunInBackgroundPermission(it.appPackage, it.isEnabled)
+        AppListAdapter { app ->
+            setRunInBackgroundPermission(app.appPackage, app.isEnabled) { isSuccess ->
+                val status = if (app.isEnabled) getString(R.string.message_allow) else getString(R.string.message_ignore)
+                val msgSuccess = "${app.appPackage} RUN_IN_BACKGROUND ${getString(R.string.message_was_set_to)} '$status'"
+                val msgError = "${getString(R.string.message_there_was_error)} $${app.appPackage} RUN_IN_BACKGROUND ${getString(R.string.message_to)} '$status'"
+
+                runOnUiThread {
+                    val msg = if (isSuccess) msgSuccess else msgError
+                    Snackbar.make(coordinator, msg, Snackbar.LENGTH_SHORT).show()
+                }
+            }
         }
     }
 
