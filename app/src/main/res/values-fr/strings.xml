@@ -1,0 +1,21 @@
+
+<resources>
+    <string name="info_dialog_message">Android 7.0 a ajouté une nouvelle permission appelée RUN_IN_BACKGROUND, qui permet de bloquer des tâches d\'arrière-plan d\'applications. Cependant, cette permission est entièrement masquée et il n\'y aucun moyen de l\'utiliser sans ADB. \n\nCette application est pour ceux qui ne veulent pas s\'embêter avec un adb shell et la saisie de commandes manuelles et qui préfèrement simplement appuyer sur activer/désactiver en face de chaque application. Vu que les applications Android ne sont pas autorisées à manipuler les permissions d\'autres applications, cette application requiert l\'accès root pour contourner le problème. \n\nConsultez le dépôt Github pour davantage d\'informations.</string>
+    <string name="loading_dialog_message">Vérification du root, chargement de la liste des applications et recherche de leur état RUN_IN_BACKGROUND…</string>
+    <string name="loading_dialog_title">Chargement…</string>
+    <string name="button_close_dialog">Fermer la fenêtre</string>
+    <string name="button_open_github">Ouvrir Github</string>
+    <string name="button_open_information">Information</string>
+    <string name="message_there_was_error">Erreur de paramétrage</string>
+    <string name="message_to">sur</string>
+    <string name="message_was_set_to">Défini sur</string>
+    <string name="message_allow">Autoriser</string>
+    <string name="message_ignore">Restreindre</string>
+    <string name="app_name">BackgroundRestrictor</string>
+    <string name="action_search">Rechercher</string>
+    <string name="action_sort">Trier</string>
+    <string name="action_sort_name">par nom</string>
+    <string name="action_sort_package">par paquet</string>
+    <string name="action_sort_disabled_first">par restriction</string>
+    <string name="search_hint">Saisir le nom d\'une application ou d\'un paquet…</string>
+</resources>
