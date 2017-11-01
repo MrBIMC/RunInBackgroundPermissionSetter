@@ -28,5 +28,6 @@
     <string name="action_sort_name">فرز حسب اسم التطبيق</string>
     <string name="action_sort_package">فرز حسب اسم الباكج</string>
     <string name="search_hint">ادخل اسم التطبيق او اسم الباكج</string>
+    <string name="action_sort_disabled_first">by restricted first</string>
 
 </resources>

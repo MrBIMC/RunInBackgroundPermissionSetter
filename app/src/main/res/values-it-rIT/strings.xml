@@ -18,9 +18,10 @@
     <string name="app_name">BackgroundRestrictor</string>
 
     <string name="action_search">Cerca</string>
-    <string name="search_hint">Inserisci il nome dell'app o del package…</string>
+    <string name="search_hint">Inserisci il nome dell\'app o del package…</string>
 
     <string name="action_sort">Ordina</string>
     <string name="action_sort_name">ordina per nome</string>
     <string name="action_sort_package">ordina per package</string>
+    <string name="action_sort_disabled_first">by restricted first</string>
 </resources>
