@@ -16,7 +16,6 @@ private val shell by lazy { Shell.Builder()
 
 fun checkRunInBackgroundPermission(pkg: String): CompletableFuture<Boolean> {
     val future = CompletableFuture<Boolean>()
-
     shell.addCommand("cmd appops get $pkg RUN_IN_BACKGROUND", 1) { _, _, output: MutableList<String> ->
         val outputString = output.joinToString()
         val runInBackgroundEnabled = outputString.contains("allow")
