@@ -1,0 +1,28 @@
+<resources>
+
+    <string name="info_dialog_message">Android 7.0 は RUN_IN_BACKGROUND と呼ばれる新しいアクセス許可を追加されました。これによりアプリのバックグラウンドの動作をブロックできます。 しかし、このアクセス許可は完全に隠されており、adb コマンドを使用する以外に有効にする方法はありません。 \n\nこのアプリは、手動でコマンドを入力する面倒な adb シェルを使いたくない人のためのもので、バックグラウンドでの実行を有効/無効にするのは、アプリ名をクリックするだけです。 Android アプリは他のアプリのアクセス許可を変更できないので、この問題を解決するためにこのアプリは root を必要とします。 \n\n詳細についてはアプリの github リポジトリを確認してください。</string>
+    <string name="loading_dialog_message">root 状態を確認し、アプリのリストをロードし、RUN_IN_BACKGROUND 状態を取得しています…</string>
+    <string name="loading_dialog_title">ロード中…</string>
+
+    <string name="button_close_dialog">ダイアログを閉じる</string>
+    <string name="button_open_github">github を開く</string>
+    <string name="button_open_information">情報</string>
+
+    <string name="message_there_was_error">設定にエラーがありました</string>
+    <string name="message_to">-></string>
+    <string name="message_was_set_to">セットしました</string>
+
+    <string name="message_allow">許可</string>
+    <string name="message_ignore">制限</string>
+
+    <string name="app_name">BackgroundRestrictor</string>
+
+    <string name="action_search">検索</string>
+
+    <string name="action_sort">ソート</string>
+    <string name="action_sort_name">名前順</string>
+    <string name="action_sort_package">パッケージ順</string>
+    <string name="action_sort_disabled_first">制限を先に</string>
+    <string name="search_hint">アプリ名またはパッケージを入力…</string>
+
+</resources>
