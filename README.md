@@ -1,5 +1,8 @@
 # RunInBackgroundPermissionSetter
 
+<a href="https://f-droid.org/fr/packages/com.pavelsikun.runinbackgroundpermissionsetter" target="_blank">
+<img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid" height="80"/></a>
+
 Overview
 ---
 Android 7.0 added new permission called RUN_IN_BACKGROUND, which can restrict background behavior of apps(blocking broadcast receivers, services, etc.). However this permission is fully hidden and there's no way to activate it besides using adb commands.
