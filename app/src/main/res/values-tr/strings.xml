@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="info_dialog_message">Android 7'de diğer uygulamaların arka plandaki davranışlarını değiştirmeye yarayan RUN_IN_BACKGROUND isimli bir izin eklendi, ama bu izin tamamen saklı olmakla birlikte sadece ADB üzerinden kullanılabiliyor. \n\nBu uygulama, ADB ile uğraşmak istemeyenler ve tek tıkla diğer uygulamaların arka plan davranışlarını ayarlamak isteyenler içindir. Fakat Android'te uyulamalar diğer uygulamaların izinleriyle oynamalarına izin verilmediği için, bu uygulama için root gereklidir. \n\nDetaylı bilgi için uygulamanın github sayfasına bakınız.</string>
+    <string name="loading_dialog_message">Root durumuna bakılıyor, uygulamalar listeniyor ve RUN_IN_BACKGROUND durumları inceleniyor… </string>
+    <string name="loading_dialog_title">Yükleniyor…</string>
+
+    <string name="button_close_dialog">Pencereyi kapat</string>
+    <string name="button_open_github">Github'ı aç</string>
+    <string name="button_open_information">bilgi</string>
+
+    <string name="message_there_was_error">Bir sorun oluştu</string>
+    <string name="message_to">--></string>
+    <string name="message_was_set_to">ayarlanıyor:</string>
+
+    <string name="message_allow">izin ver</string>
+    <string name="message_ignore">yasakla</string>
+
+    <string name="app_name">BackgroundRestrictor</string>
+
+    <string name="action_search">Ara</string>
+    <string name="search_hint">Paketin veya uygulamanın adını giriniz…</string>
+
+    <string name="action_sort">Sırala</string>
+    <string name="action_sort_name">isme göre</string>
+    <string name="action_sort_package">pakete göre</string>
+    <string name="action_sort_disabled_first">yasaklanan başta</string>
+</resources>
